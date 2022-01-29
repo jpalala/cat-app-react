@@ -1,11 +1,12 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // import logo from './logo.svg';
 import './App.css';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-import Cats from './components/Cats';
+import Breeds from './components/Breeds';
 
 const queryClient = new QueryClient();
 
@@ -55,7 +56,7 @@ function App() {
         {breedId > -1 ? (
           <Breed breedId={breedId} setBreedId={setBreedId} />
         ) : (
-        <Cats />
+        <Breeds />
         )}
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
